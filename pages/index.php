@@ -59,20 +59,8 @@
             <div id="navGraphics">
                 <h2>Computer Science Club</h2>
                 <h3>at Highline Community College</h3>
-                <div id="logoBars">
-                    <div class="dkblue">
-                        <!--dkblue-->
-                    </div> <!-- insert lime blue dkblue logo underlines -->
-                    <div class="lime">
-                        <!--lime-->
-                    </div> <!-- insert lime blue dkblue logo underlines -->
-                    <div class="blue">
-                        <!--blue-->
-                    </div> <!-- insert lime blue dkblue logo underlines -->
-                </div>
             </div>
             <div id="navLinks">
-
                 <a href="javascript:void(0);" class="navIcon">
                     <i id="navIcon" class="fa fa-bars fa-2x"></i>
                 </a>
@@ -86,10 +74,125 @@
             </div>
         </nav>
     </div>
-        <header>
-
-        </header>
-            <div class="slideContainer">
+    <div class="item">
+        <div class="item-image-container">
+          <img class="item-image" src="https://i2.wp.com/www.futuristarchitecture.com/wp-content/uploads/2016/11/fantastic-small-living-room-interior-idea-7.jpg?w=700&ssl=1" />
+        </div>
+        <!-- Staggered Header Elements -->
+        <div class="item-header">
+          <span class="vertical-part"><b>A</b></span>
+          <span class="vertical-part"><b>i</b></span>
+          <span class="vertical-part"><b>r</b></span>
+          <span class="vertical-part"><b>b</b></span>
+          <span class="vertical-part"><b>n</b></span>
+          <span class="vertical-part"><b>b</b></span>
+        </div>
+        <!-- Staggered Description Elements -->
+        <div class="item-description">
+          <span class="vertical-part">
+            <b>Airbnb</b>
+          </span>
+          <span class="vertical-part">
+            <b>ipsum</b>
+          </span>
+          <span class="vertical-part">
+            <b>dolor</b>
+          </span>
+          <span class="vertical-part">
+            <b>sit</b>
+          </span>
+          <span class="vertical-part">
+            <b>amet,</b>
+          </span>
+          <span class="vertical-part">
+            <b>consectetur</b>
+          </span>
+          <span class="vertical-part">
+            <b>adipiscing</b>
+          </span>
+          <span class="vertical-part">
+            <b>elit.</b>
+          </span>
+          <span class="vertical-part">
+            <b>Pellentesque</b>
+          </span>
+          <span class="vertical-part">
+            <b>elementum</b>
+          </span>
+          <span class="vertical-part">
+            <b>gravida</b>
+          </span>
+          <span class="vertical-part">
+            <b>ex</b>
+          </span>
+          <span class="vertical-part">
+            <b>at</b>
+          </span>
+          <span class="vertical-part">
+            <b>maximus.</b>
+          </span>
+          <span class="vertical-part">
+            <b>Nullam</b>
+          </span>
+          <span class="vertical-part">
+            <b>quis</b>
+          </span>
+          <span class="vertical-part">
+            <b>leo</b>
+          </span>
+          <span class="vertical-part">
+            <b>ipsum.</b>
+          </span>
+          <span class="vertical-part">
+            <b>Lorem</b>
+          </span>
+          <span class="vertical-part">
+            <b>ipsum</b>
+          </span>
+          <span class="vertical-part">
+            <b>Nam</b>
+          </span>
+          <span class="vertical-part">
+            <b>consectetur</b>
+          </span>
+          <span class="vertical-part">
+            <b>malesuada</b>
+          </span>
+          <span class="vertical-part">
+            <b>blandit.</b>
+          </span>
+          <span class="vertical-part">
+            <b>Mauris</b>
+          </span>
+          <span class="vertical-part">
+            <b>vulputate</b>
+          </span>
+          <span class="vertical-part">
+            <b>purus</b>
+          </span>
+          <span class="vertical-part">
+            <b>id</b>
+          </span>
+          <span class="vertical-part">
+            <b>dolor</b>
+          </span>
+          <span class="vertical-part">
+            <b>euismod</b>
+          </span>
+          <span class="vertical-part">
+            <b>varius.</b>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="controls">
+      <ul>
+        <li class="control" data-index="0"></li>
+        <li class="control" data-index="1"></li>
+        <li class="control" data-index="2"></li>
+      </ul>
+    </div>
+            <!-- <div class="slideContainer">
                 <div class="slideImg fade">
 <img src="../images\alex-knight-199368-unsplash.jpg" alt=" kids playing in Mogadishu CS Cluba">
                     
@@ -110,17 +213,15 @@
 <img src="../images\randall-bruder-136626-unsplash.jpg">
             
                 </div>
-               <a class="prev"> &#10094; </a>
-               <a class="next"> &#10095; </a>
-            <hr>
-            </div><!--  close slide container -->
+            </div>
+            -->
             <div class="slideDials">
                 <span class="dial"></span>
                 <span class="dial"></span>
                 <span class="dial"></span>
                 <span class="dial"></span>
                 <span class="dial"></span>
-            </div>
+            </div> -->
 
         <section class="intro">
 <p>It is a first Computer Science Club for
