@@ -1,0 +1,124 @@
+@charset "utf-8";
+/*
+
+    Last Edited By: A. Camille Hall
+    Created By: A. Camille Hall
+    Date: 02.16.2019
+    Filename: about.css
+
+    styling and structure of the about page for Highline CC Computer Science Club
+
+
+*/
+
+main {
+  width: 100%;
+  display: flex;
+  padding: 1.5em 0;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.active,
+.dial:active,
+.dial:hover {
+  background-color: transparent;
+}
+
+.row {
+  background: #016DC3;
+}
+
+
+/*----------section area ------*/
+
+
+.leftSection {
+  width: 40%;
+  box-sizing: content-box;
+  background-color: #fff;
+  border: 1px solid #F1F07F;
+  padding: 40px 10px;
+  position: relative;
+}
+
+.sectionTitle {
+    background-color: #016DC3;
+    text-transform: uppercase;
+    font-weight: 600;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    left: 40%;
+    top: -30px;
+    position: absolute;
+}
+.title {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial;
+    color: #fff;
+}
+p {
+  padding: 0 .5em;
+  font-size: 1.2em;
+}
+/*--------aside area -------*/
+.rightSection {
+  width: 40%;
+}
+aside {
+  box-sizing: content-box;
+  display: flex;
+  align-items: baseline;
+}
+
+aside img {
+  width: 100%;
+}
+
+/* --------FORMS------- */
+
+form label {
+    color: #fff !important;
+}
+
+input#username {
+    padding: 2em 0;
+}
+
+button.btn {
+    margin: 1em auto;
+    background-color: #cddc39;
+    color: #000;
+}
+
+/* -------------media for phones ------------ */
+
+@media screen and (max-width: 960px){
+
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.leftSection {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 40px 0;
+}
+
+.rightSection {
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    width: 100%;
+}
+
+}
