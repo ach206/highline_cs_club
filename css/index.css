@@ -30,7 +30,6 @@ body {
 html, body {
   width: 100%;
   height: 100vh;
-  /* overflow: hidden;  */
   background: #22222A;
   font-family: 'Fira Mono', monospace;
   -webkit-font-smoothing: antialiased;
@@ -43,6 +42,10 @@ html, body {
   margin: 0 auto;
 }
 
+.pages {
+  width: 100%;
+  min-height: 100vh;
+}
  /*----------navigation area -----------*/
  nav, footer {
     box-sizing: border-box;
@@ -53,9 +56,9 @@ html, body {
   padding: 1rem 1rem;
   text-align: center;
 }
-#navGraphics {
+/* #navGraphics {
   width: 30%;
-}
+} */
 div#navGraphics h2 {
 font-family: 'Fira Mono', monospace;
 font-size: 2rem;
@@ -79,40 +82,12 @@ div#navGraphics h3:nth-of-type(2) {
     
 }div#navGraphics h3:nth-of-type(4) {
     color: rgb(63, 133, 252);
-  
 }
 
 .navIcon {
   display: none;
 }
-#logoDiv img{
-  width: 40%;
-  display:flex;
-}
-.bars {
-  display: flex;
-  flex-direction: column;
-  width: inherit;
-}
 
-#logoBars {
-width: 100%;
-}
-
-#logoBars div {
-  width: 30%;
-  height: 8px;
-  display: inline-flex;
-}
-.dkblue {
-  background-color: #016DC3;
-}
-.blue {
-  background-color: rgb(63, 133, 252);
-}
-.lime {
-  background-color: #F1F07F;
-}
 /*--------------slideshow--------------*/
 
 .slideshow {
@@ -228,7 +203,7 @@ width: 100%;
 /* Controls ----------------------------------------------------------------------*/
 .controls {
   position: absolute;
-  bottom: 0;
+  bottom: 2%;
   right: 0;
   text-align: right;
   z-index: 1000;
@@ -264,20 +239,23 @@ div#navLinks a, footer {
 }
 
 /*-----------section---------*/
-.intro {
-    background: rgba(0, 0, 0, .3);
-}
-
-.intro p {
-  color: white;
-  font-size: 1em;
-  box-sizing: content-box;
-  padding: 0 2em;
+.intro-container{
+  background: rgba(0, 0, 0, .3);
+  width: inherit;
+  height: 50vh;
   display: flex;
-  max-width: 600px;
-  margin: 1em auto;
+  align-items: center;
+}
+.intro {
+  display: inline;
+  align-items: center;
+  text-align: left;
+  font-size: 3em;
 }
 
+.typed-cursor{
+  font-size: 3em;
+}
 .highlights {
   display: flex;
   justify-content: space-evenly;
@@ -349,8 +327,10 @@ footer {
 
 }
 div.footer {
-  box-sizing: border-box;
   padding: 1rem;
+  height: 20%;
+  display: flex;
+  align-items: center;
 }
 .footerItem {
   display: flex;
@@ -378,25 +358,14 @@ div#navLinks {
      margin-left: auto;
 }
 a.menuLinks:hover {
-    background-color: rgb(63, 133, 252);
-    background-color: rgba(5, 23, 43, .22);
+  background-color: rgba(50, 55, 61);
+  background-color: rgba(50, 55, 61, .52);
+  border-bottom: 1px solid white;
 }
 
 
 }
-/*-------------screens 769px-1050px vw-------------------*/
- @media screen and (max-width: 1050px) {
-   .highlights {
-     flex-direction: column;
-     align-items: center;
-   }
 
-   .announce, .testimony {
-     margin: 1em 0;
-     max-width: 100%;
-   }
-
- }
 /*-------------screens smaller than 769px vw-------------------*/
  @media screen and (max-width: 768px) {
 body {

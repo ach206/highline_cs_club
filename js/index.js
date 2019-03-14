@@ -17,40 +17,7 @@
 		});
 
 // --------------function to loop through the images and hide them by default--------
-		// let slideIndex = 0;
-		// slideshow();
 
-		// function slideshow() {
-
-		// let slide = document.getElementsByClassName("slideImg");
-		// let dial = document.getElementsByClassName("dial");
-		// for(let i = 0; i < slide.length; i++) {
-		// 	// hide slides one by one
-		// 	slide[i].style.display = "none";
-		// 	}
-
-		// slideIndex++;
-		// if (slideIndex > slide.length) {
-		// slideIndex = 1
-		// }
-
-		// for(let i = 0; i < dial.length; i++) {
-		// 	dial[i].className = dial[i].className.replace(" active", "");
-		// 	// temporairly disables active styling until loop activates it
-		// }
-
-		// 	slide[slideIndex-1].style.display = "block";
-		// 	dial[slideIndex-1].className += " active";
-		// 	setTimeout(slideshow, 4000); /*Change image every 4 seconds*/
-		// }// --------close slideshow function------
-
-		// changes the icon when the drawer opens
-		// $("#navIcon").on("click", function switchIcon(){
-		// 	$("#navIcon").toggleClass("fa-bars fa-times");
-		// });
-
-
-		// Master DOManipulator v2 ------------------------------------------------------------
 const items = document.querySelectorAll('.item'),
 controls = document.querySelectorAll('.control'),
 headerItems = document.querySelectorAll('.item-header'),
@@ -120,3 +87,20 @@ transitionDelay: (items) => { // Set incrementing css transition-delay for .item
 
 let intervalF = setInterval(slider.nextSlide, interval);
 slider.init();
+
+
+
+// function startTyping(el) {
+	
+	
+	let options = {
+		strings: [" ","It is a first Computer Science Club for Computer Science Students.", 
+		"Purpose of this club is to promote CS department and organize CS students.", 
+		"Take CS students to different CS events and create events at Highline."],
+		typeSpeed: 40,
+		startDelay: 3000,
+		backDelay: 700, 
+		loop: true,
+	}
+	
+	let typed = new Typed(".intro", options);

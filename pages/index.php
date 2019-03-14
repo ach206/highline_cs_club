@@ -10,10 +10,7 @@
             Created by: A. Camille Hall
             Date: 02.16.2019
             Filename: index.php */
-
-                Landing page for Highline CC Computer Science Club
-
-
+            Landing page for Highline CC Computer Science Club
                 -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,34 +19,15 @@
 
 <link href="../css/index.css" rel="stylesheet" />
 <link href="../css/about.css" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
 <script src="../js/index.js" defer></script>
-<link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit/MyFontsWebfontsKit.css">
-<link href="https://fonts.googleapis.com/css?family=Alegreya|Dr+Sugiyama" rel="stylesheet">
-<!--
-                    /**
-                     * @license
-                     * MyFonts Webfont Build ID 3562330, 2018-04-19T19:42:03-0400
-                     *
-                     * The fonts listed in this notice are subject to the End User License
-                     * Agreement(s) entered into by the website owner. All other parties are
-                     * explicitly restricted from using the Licensed Webfonts(s).
-                     *
-                     * You may obtain a valid license at the URLs below.
-                     *
-                     * Webfont: Code-Pro-Light-Demo by Fontfabric
-                     * URL: https://www.myfonts.com/fonts/font-fabric/code-pro/light-demo/
-                     * Copyright: Copyright (c) 2010 by Svetoslav Simov. All rights reserved.
-                     * Licensed pageviews: Unlimited
-                     *
-                     *
-                     * License: https://www.myfonts.com/viewlicense?type=web&buildid=3562330
-                     *
-                     * © 2018 MyFonts Inc
-                    */
+<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.10"></script>
 
-                    -->
 <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit/MyFontsWebfontsKit.css">
 </head>
 
@@ -170,14 +148,11 @@
         <li class="control" data-index="2"></li>
       </ul>
     </div>
-
-        <section class="intro">
-<p>It is a first Computer Science Club for
-    Computer Science Students.
-    Purpose of this club is to promote CS
-    department and organize CS students.
-    Take CS students to different CS events and create events at Highline</p>
-        </section>
+<div class="pages">
+<div class="intro-container">
+    <span class="intro">
+</span> 
+</div>
 <section class="highlights">
     <?php
         $upcomingEvtDb= new Events();
@@ -186,6 +161,7 @@
       $pastEvtDb->getPastEvents();
     ?>
   </section>
+  </div>
         <div class="footer">
             <footer>
                 <div class="footerItem fItem1">
