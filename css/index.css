@@ -7,20 +7,7 @@
     Filename: index.css
 
     styling and structure  for  Highline CC Computer Science Club
-
-
 */
-/* html    {
-    background: #fff;
-}
-
-body {
-  background-color: rgb(62, 62, 62);
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  font-family: Alegreya, serif;
-} */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -55,10 +42,8 @@ html, body {
  div#navBar {
   padding: 1rem 1rem;
   text-align: center;
-}
-/* #navGraphics {
-  width: 30%;
-} */
+ }
+
 div#navGraphics h2 {
 font-family: 'Fira Mono', monospace;
 font-size: 2rem;
@@ -68,7 +53,7 @@ margin: 0;
 }
 
 div#navGraphics h3 {
-    color: #016DC3;
+    color: rgb(172, 40, 35);
     font-family: 'Fira Mono', monospace;
     text-transform: uppercase;
     font-weight: 600;
@@ -77,12 +62,6 @@ div#navGraphics h3 {
     font-size: 1.2em;
 }
 
-div#navGraphics h3:nth-of-type(2) {
-    color: rgb(172, 40, 35);
-    
-}div#navGraphics h3:nth-of-type(4) {
-    color: rgb(63, 133, 252);
-}
 
 .navIcon {
   display: none;
