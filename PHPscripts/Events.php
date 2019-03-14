@@ -7,7 +7,6 @@ class Events extends myPDO{
 		while($row = $stmt->fetch()){
 
 echo <<<EOT
-<section class="highlights">
           <div class="announce">
             <div class="hiTitle">
             <h3>Past Events</h3>
@@ -16,7 +15,6 @@ echo <<<EOT
             <p id="past-event-name">{$row['evt_name']}</p>
             <p id="past-event-location">{$row['location']}</p>
           </div>
-        </section>
 EOT;
 
 		}
@@ -30,7 +28,6 @@ EOT;
 		while($row = $stmt->fetch()){
 
 echo <<<EOT
-<section class="highlights">
           <div class="announce">
             <div class="hiTitle">
             <h3>Upcoming Events</h3>
@@ -39,7 +36,6 @@ echo <<<EOT
             <p id="upcoming-event-name">{$row['name']}</p>
             <p id="upcoming-event-location">{$row['location']}</p>
           </div>
-        </section>
 EOT;
 
 		}
