@@ -54,11 +54,7 @@
                     <div id="navGraphics">
                         <h2>Computer Science Club</h2>
                         <h3>at Highline Community College</h3>
-                        <div id="logoBars">
-                            <div class="dkblue"><!--dkblue--></div> <!-- insert lime blue dkblue logo underlines -->
-                            <div class="lime"><!--lime--></div> <!-- insert lime blue dkblue logo underlines -->
-                            <div class="blue"><!--blue--></div> <!-- insert lime blue dkblue logo underlines -->
-                        </div>
+                         
                     </div>
          <div id="navLinks">
 
