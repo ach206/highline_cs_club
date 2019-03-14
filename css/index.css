@@ -227,7 +227,9 @@ width: 100%;
 
 /* Controls ----------------------------------------------------------------------*/
 .controls {
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   text-align: right;
   z-index: 1000;
 }
@@ -248,91 +250,7 @@ width: 100%;
 .controls ul li.active {
   background:#6a6a77;;
 }
-/*
-.slideContainer {
-  margin: 0;
-  position: relative;
-  height: 100vh;
-}
 
-.slideImg {
-    display: none;
-    max-width: inherit;
-    width: 100%;
-    height: inherit;
-}
-
-.slideImg img {
-    width: 100%;
-}
-
-.slideDials {
-    display: inline-block;
-    margin: 0 auto;
-}
-
-.prev,.next {
-    padding: 1rem;
-    margin-left: auto;
-    top: 50%;
-    font-weight: 700;
-    color: #fff;
-    position: absolute;
-}
-
-.next {
-    right: 0;
-
-}
-.prev:hover ,.next:hover {
-    background-color: #ccc;
-    background-color: rgba(0, 0, 0, .6);
-}
-.dial {
- cursor: pointer;
-  height: .65em;
-  width: .65em;
-  margin: 0 5px;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  display: inline-block;
-       /*---dont forget flex extensions*/
- /*      
-  transition: background-color 0.4s ease;
-}
-.active, .dial:active, .dial:hover {
-    background-color: #ccc;
-/*    background-color: rgba(0, 0, 0, .6);
-/*
-background-color: rgba(172, 40, 35, .5);
-}
-
-.caption {
-    position: absoulute;
-    text-align: center;
-    font-style: italic;
-
-}
-*/
-/* Fading animation */
-/*
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-*/
 /*------------hyperlinks------------*/
 a {
     cursor: pointer;
@@ -363,9 +281,8 @@ div#navLinks a, footer {
 .highlights {
   display: flex;
   justify-content: space-evenly;
-  margin: 0 auto;
+  margin: 1em auto;
   width: 100%;
-  padding: 1em 0;
 }
 
 .announce, .testimony {
@@ -375,6 +292,7 @@ div#navLinks a, footer {
   max-width: 500px;
   height: 300px;
   width: 100%;
+  margin: 1em;
   box-sizing: border-box;
   overflow-y: auto;
 }
