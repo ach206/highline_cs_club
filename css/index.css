@@ -53,7 +53,6 @@ margin: 0;
 }
 
 div#navGraphics h3 {
-    color: rgb(172, 40, 35);
     font-family: 'Fira Mono', monospace;
     text-transform: uppercase;
     font-weight: 600;
@@ -236,10 +235,18 @@ div#navLinks a, footer {
   font-size: 3em;
 }
 .highlights {
-  display: flex;
+  /* display: flex;
   justify-content: space-evenly;
   margin: 1em auto;
+  */
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+  --grid-columns: 3;
   width: 100%;
+  margin: 10em auto 7em;
+  position: relative;
+  max-width: 1600px;
+  
 }
 
 .announce, .testimony {
