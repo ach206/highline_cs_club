@@ -24,36 +24,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
     <script src="../js/index.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit/MyFontsWebfontsKit.css">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya|Dr+Sugiyama" rel="stylesheet">
-    <!--
-                    /**
-                     * @license
-                     * MyFonts Webfont Build ID 3562330, 2018-04-19T19:42:03-0400
-                     *
-                     * The fonts listed in this notice are subject to the End User License
-                     * Agreement(s) entered into by the website owner. All other parties are
-                     * explicitly restricted from using the Licensed Webfonts(s).
-                     *
-                     * You may obtain a valid license at the URLs below.
-                     *
-                     * Webfont: Code-Pro-Light-Demo by Fontfabric
-                     * URL: https://www.myfonts.com/fonts/font-fabric/code-pro/light-demo/
-                     * Copyright: Copyright (c) 2010 by Svetoslav Simov. All rights reserved.
-                     * Licensed pageviews: Unlimited
-                     *
-                     *
-                     * License: https://www.myfonts.com/viewlicense?type=web&buildid=3562330
-                     *
-                     * © 2018 MyFonts Inc
-                    */
-
-                    -->
-    <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit/MyFontsWebfontsKit.css">
 </head>
 
 <body>
+<div id="alert_bar">
+            <p class="announcement-description">Admin Portal</p>
+</div>
+
     <div id="navBar">
         <nav>
             <div id="navGraphics">
@@ -84,7 +61,7 @@ session_start();
 
 if(isset($_SESSION['timer'])){
 	
-	if((time() - $_SESSION['timer'])> 5){
+	if((time() - $_SESSION['timer'])> 44000){
 		header("Location: logout.php");
 	}else{
 		$_SESSION['timer'] = time();
@@ -117,8 +94,10 @@ if(isset($_SESSION['username'])){
 function display(){
 	
 	echo time() - $_SESSION['timer']."<br>";
-	echo "Welcome ". $_SESSION['username']."<br>";
-	// echo "<a href='product.php'>Product Page</a><br>";
+    echo "Welcome ". $_SESSION['username']."</br>";
+	echo "<a href='welcome.php'>Admin Home</a></br>";
+    echo "<a href='allSubs.php'>See all subscribers</a></br>";
+    echo "<a href='editSubs.php'>Add new subscriber</a></br>";
 	echo "<a href='logout.php'><input type =button name =logout value=Logout></a>";
 	
 }

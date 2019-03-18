@@ -1,3 +1,8 @@
+<?php
+	include_once '../PHPscripts/myPDO.php';
+	include_once '../PHPscripts/Faq.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,33 +27,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
     <script src="../js/index.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit/MyFontsWebfontsKit.css">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya|Dr+Sugiyama" rel="stylesheet">
-    <!--
-                    /**
-                     * @license
-                     * MyFonts Webfont Build ID 3562330, 2018-04-19T19:42:03-0400
-                     *
-                     * The fonts listed in this notice are subject to the End User License
-                     * Agreement(s) entered into by the website owner. All other parties are
-                     * explicitly restricted from using the Licensed Webfonts(s).
-                     *
-                     * You may obtain a valid license at the URLs below.
-                     *
-                     * Webfont: Code-Pro-Light-Demo by Fontfabric
-                     * URL: https://www.myfonts.com/fonts/font-fabric/code-pro/light-demo/
-                     * Copyright: Copyright (c) 2010 by Svetoslav Simov. All rights reserved.
-                     * Licensed pageviews: Unlimited
-                     *
-                     *
-                     * License: https://www.myfonts.com/viewlicense?type=web&buildid=3562330
-                     *
-                     * © 2018 MyFonts Inc
-                    */
-
-                    -->
-    <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit/MyFontsWebfontsKit.css">
-</head>
+ </head>
 
 <body>
     <div id="navBar">
@@ -79,19 +58,22 @@
 
     <main>
         <section>
-            <div class="sectionText">
+            <!-- <div class="sectionText">
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod velit non ultrices
                     iaculis. Etiam in risus eu orci euismod vehicula vitae eget mauris. Pellentesque et ex maximus,
                     pretium ante in, efficitur ante. Fusce tempor lacinia sodales. Fusce ac est consequat, tristique
                     leo eget, ultricies sem. Nunc et placerat urna, id iaculis ante. In at est et nibh egestas rhoncus.
                     Suspendisse at ligula nec nisi mollis consequat. Vestibulum pretium tincidunt enim vel egestas.</p>
-            </div>
+            </div> -->
             <div class="sectionList">
                 <div class="sectionTitle">
                     <div class="title">Common Questions</div>
                 </div>
-
-                <ul>
+                <?php
+        $listFAQ= new Faq();
+      $listFAQ->getFaq();
+      ?>
+                <!-- <ul>
                     <li>Curabitur ac diam vulputate, vulputate odio sed, luctus diam?</li>
                     <li>Sed quis erat sit amet sapien posuere molestie?</li>
                     <li>Donec vel diam non enim ultrices pretium maximus nec du?.</li>
@@ -105,7 +87,7 @@
                     <li>Fusce convallis sapien ut convallis fermentum.</li>
                     <li>Etiam malesuada augue a tristique sagittis?</li>
                     <li>Suspendisse sagittis turpis quis congue convalli?</li>
-                </ul>
+                </ul> -->
             </div>
         </section>
         <div class="rightSection">

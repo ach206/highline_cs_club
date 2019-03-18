@@ -24,12 +24,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
 <script src="../js/index.js" defer></script>
 <script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.10"></script>
 
-<link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit/MyFontsWebfontsKit.css">
 </head>
 
 <body>

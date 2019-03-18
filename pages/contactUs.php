@@ -1,3 +1,7 @@
+<?php
+	include_once '../PHPscripts/myPDO.php';
+	include_once '../PHPscripts/Leaders.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,50 +18,29 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Highline CC Computer Science Club</title> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+        <link href="../css/materialize.css" rel="stylesheet"  />
         <link href="../css/index.css" rel="stylesheet"  />
         <link href="../css/contact.css" rel="stylesheet"  />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
         <script src="../js/index.js" defer></script>
-        <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit/MyFontsWebfontsKit.css">
-        <link href="https://fonts.googleapis.com/css?family=Dr+Sugiyama" rel="stylesheet">
-        <!--
-            /**
-             * @license
-             * MyFonts Webfont Build ID 3562330, 2018-04-19T19:42:03-0400
-             *
-             * The fonts listed in this notice are subject to the End User License
-             * Agreement(s) entered into by the website owner. All other parties are
-             * explicitly restricted from using the Licensed Webfonts(s).
-             *
-             * You may obtain a valid license at the URLs below.
-             *
-             * Webfont: Code-Pro-Light-Demo by Fontfabric
-             * URL: https://www.myfonts.com/fonts/font-fabric/code-pro/light-demo/
-             * Copyright: Copyright (c) 2010 by Svetoslav Simov. All rights reserved.
-             * Licensed pageviews: Unlimited
-             *
-             *
-             * License: https://www.myfonts.com/viewlicense?type=web&buildid=3562330
-             *
-             * © 2018 MyFonts Inc
-            */
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-            -->
-        <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit/MyFontsWebfontsKit.css">
-    </head>
+        <!-- <script src="../js/materialize.min.js" defer></script> -->
+  </head>
     <body>
         <div id="navBar">
             <nav>
             <div id="navGraphics">
                 <h2>Computer Science Club</h2>
                 <h3>at Highline Community College</h3>
-                <div id="logoBars">
-                    <div class="dkblue"><!--dkblue--></div> <!-- insert lime blue dkblue logo underlines -->
-                    <div class="lime"><!--lime--></div> <!-- insert lime blue dkblue logo underlines -->
-                    <div class="blue"><!--blue--></div> <!-- insert lime blue dkblue logo underlines -->
-                </div>
             </div>
  <div id="navLinks">
 
@@ -77,7 +60,13 @@
         <header>
 
         </header>
+        <div class="list-leaders">
+    <?php
+        $listAllLeaders= new Leaders();
+      $listAllLeaders->getLeaders();
 
+    ?>
+    </div>
         <main>
             <section>
             <form id="contactForm">
@@ -108,8 +97,115 @@
             </form>
         </section>
         <aside>
-            <div class="googleMap">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d86442.96333870248!2d-122.22272998134227!3d47.385747847335345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x549058122dce6c0d%3A0x5d47c86dbf15005a!2sKent%2C+WA!5e0!3m2!1sen!2sus!4v1527983042014" width="800" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <div class="googleMap">
+   <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        // Styles a map in night mode.
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 47.388, lng: -122.304003},
+          zoom: 12,
+          styles: [
+            {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+            {elementType: 'labels.text.fill', stylers: [{color: '#ac2823'}]},
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#ac2823'}]
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#ac2823'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{color: '#263c3f'}]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#6b9a76'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{color: '#38414e'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#212a37'}]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#9ca5b3'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{color: '#ac2823'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{color: '#1f2835'}]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#ac2823'}]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{color: '#2f3948'}]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#ac2823'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{color: '#17263c'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{color: '#515c6d'}]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{color: '#17263c'}]
+            }
+          ]
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAK2nDSUtEh1L633quA3NMW73wjJLc-TS8&callback=initMap"
+    async defer></script>
+
             </div>
         </aside>
     </main>

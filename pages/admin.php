@@ -90,7 +90,7 @@
                         <label for="username">Username</label>
                     </div>
                     <div class="input-field col s12">
-                        <input id="user-pw" name="userPw" type="text" class="validate">
+                        <input id="user-pw" name="userPw" type="password" class="validate">
                         <label for="user-pw">Password</label>
                     </div>
                 </div>

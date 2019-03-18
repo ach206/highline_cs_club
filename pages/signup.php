@@ -21,7 +21,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join the Computer Science Club</title>
     
-
     <link href="../css/index.css" rel="stylesheet" />
     <link href="../css/contact.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -164,59 +163,6 @@ FORMBLCK;
                 print $form;
         }
 ?>
-<!-- 
-            <form id="contactForm" action="submit" method="post">
-                <fieldset id="custInfo">
-                    <legend>Contact Information</legend>
-                    <div class="formRow">
-                        <label for="name">Name</label>
-                        <input name="custName" id="name" type="text" required="required" placeholder="Required Field">
-                    </div>
-                    <div class="formRow">
-                        <label for="email">E-mail</label>
-                        <input name="custEmail" id="email" type="email" required="required" placeholder="Required Field">
-                    </div>
-                    <div class="formRow">
-                        <label>Times of Availability</label>
-                        <select name="available_times" id="available_times">
-                            <option value="morning">Mornings 8AM-12PM</option>
-                            <option value="afternoon">Afternoons 12pm-4PM</option>
-                            <option value="evening">Evening 4PM-8PM</option>
-                        </select>
-                    </div>
-                        <label>Days of Availability</label>
-                        <select name="available_days" id="available_days">
-                            <option value="Sunday">Sunday</option>
-                            <option value="Monday">Monday</option>
-                            <option value="Tuesday">Tuesday</option>
-                           <option value="Wednesday">Wednesday</option>
-                           <option value="Thursday">Thursday</option>
-                           <option value="Friday">Friday</option>
-                           <option value="Saturday">Saturday</option>
-                        </select>
-                    </div>
-
-                    <div class="formRow">
-                        <label for="comments">Additional notes</label>
-                        <textarea name="custComment" id="comments" rows="5"></textarea>
-                    </div>
-                    <div class="formRow">
-                        <label for="subscribe">Would you like to be considered for club leadership positions?
-                            </label>
-                            <input name="subscribe" id="subscribe" type="checkbox" required="required" class="filled-in" checked="checked">
-                    </div>
-                    <div class="formRow">
-                        <label for="subscribe">Subscribe to newsletter
-                            </label>
-                            <input name="subscribe" id="subscribe" type="checkbox" required="required" class="filled-in" checked="checked">
-                    </div>
-                    <div class="formRow">
-                        <button type="submit" class="subButton">Send</button>
-                        <button type="reset" class="resButton">Clear</button>
-                    </div>
-
-                </fieldset>
-            </form> -->
         </section>
         <aside>
 <img src="../images/alex-knight-199368-unsplash.jpg" alt="technology image">
