@@ -33,18 +33,47 @@ html, body {
   width: 100%;
   min-height: 100vh;
 }
- /*----------navigation area -----------*/
+/* -------Announcement Bar------- */
+ #alert_bar p {
+   display: inline;
+   text-align: center;
+ }
+
+ #alert_bar {
+   background: rgb(56, 53, 60);
+   color: #fff;
+   z-index: 1000;
+   display: block;
+   position: fixed;
+   top: 0;
+   width: 100%;
+   padding: 10px 0px;
+   text-align: center;
+ }
+
+ #alert_bar a {
+   color: #fff;
+   text-decoration: underline;
+   font-weight: normal;
+ }
+/*----------navigation area -----------*/
  nav, footer {
     box-sizing: border-box;
     width: 100%;
     padding: .5em .5em;
 }
- div#navBar {
+#navBar {
   padding: 1rem 1rem;
   text-align: center;
- }
-
-div#navGraphics h2 {
+  margin-top: calc(100vh / 15);
+}
+#navGraphics {
+  color: inherit;
+  text-decoration: inherit;
+  cursor: pointer;
+  font-size: inherit;
+}
+#navGraphics h2 {
 font-family: 'Fira Mono', monospace;
 font-size: 2rem;
 color: rgb( 172, 40, 35);
@@ -52,7 +81,7 @@ text-align: left;
 margin: 0;
 }
 
-div#navGraphics h3 {
+#navGraphics h3 {
     font-family: 'Fira Mono', monospace;
     text-transform: uppercase;
     font-weight: 600;
@@ -235,13 +264,14 @@ div#navLinks a, footer {
   font-size: 3em;
 }
 .highlights {
-  /* display: flex;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: 1em auto;
-  */
-  display: grid;
+  /* margin: 1em auto; */
+ 
+  /* display: grid;
   grid-template-columns: repeat(var(--grid-columns), 1fr);
-  --grid-columns: 3;
+  --grid-columns: 3; */
   width: 100%;
   margin: 10em auto 7em;
   position: relative;
@@ -316,7 +346,7 @@ div.footer {
   padding: 1rem;
   height: 10%;
   display: flex;
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
   right: auto;
   width: 100%;
