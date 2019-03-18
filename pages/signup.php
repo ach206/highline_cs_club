@@ -1,3 +1,8 @@
+<?php
+	include_once '../PHPscripts/myPDO.php';
+	include_once '../PHPscripts/Subscriptions.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,32 +27,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
     <script src="../js/index.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit/MyFontsWebfontsKit.css">
-    <link href="https://fonts.googleapis.com/css?family=Dr+Sugiyama" rel="stylesheet">
-    <!--
-            /**
-             * @license
-             * MyFonts Webfont Build ID 3562330, 2018-04-19T19:42:03-0400
-             *
-             * The fonts listed in this notice are subject to the End User License
-             * Agreement(s) entered into by the website owner. All other parties are
-             * explicitly restricted from using the Licensed Webfonts(s).
-             *
-             * You may obtain a valid license at the URLs below.
-             *
-             * Webfont: Code-Pro-Light-Demo by Fontfabric
-             * URL: https://www.myfonts.com/fonts/font-fabric/code-pro/light-demo/
-             * Copyright: Copyright (c) 2010 by Svetoslav Simov. All rights reserved.
-             * Licensed pageviews: Unlimited
-             *
-             *
-             * License: https://www.myfonts.com/viewlicense?type=web&buildid=3562330
-             *
-             * © 2018 MyFonts Inc
-            */
-
-            -->
-    <link rel="stylesheet" type="text/css" href="MyFontsWebfontsKit/MyFontsWebfontsKit.css">
+ 
 </head>
 
 <body>
@@ -79,7 +59,9 @@
 
     <main>
         <section>
-            <form id="contactForm">
+<?php
+$form = <<<FORMBLCK
+            <form id="contactForm" action="" method="POST" enctype="multipart/form-data">
                 <fieldset id="custInfo">
                     <legend>Contact Information</legend>
                     <div class="formRow">
@@ -91,30 +73,142 @@
                         <input name="custEmail" id="email" type="email" required="required" placeholder="Required Field">
                     </div>
                     <div class="formRow">
-                        <label>Class</label>
-                        <p>
-                                <input name="group1" type="radio" checked />
-                                <span>Freshman</span>
-                        </p>
-                        <p>
-                                <input name="group1" type="radio" />
-                                <span>Sophmore</span>
-
-                        </p>
-                        <p>
-                                <input name="group1" type="radio" />
-                                <span>Junior</span>
-
-                        </p>
-                        <p>
-                                <input name="group1" type="radio" />
-                                <span>Senior</span>
-
-                        </p>
+                        <label>Times of Availability</label>
+                        <select name="available_times" id="available_times">
+                            <option value="morning">Mornings 8AM-12PM</option>
+                            <option value="afternoon">Afternoons 12pm-4PM</option>
+                            <option value="evening">Evening 4PM-8PM</option>
+                        </select>
                     </div>
+                        <label>Days of Availability</label>
+                        <select name="available_days" id="available_days">
+                            <option value="Sunday">Sunday</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                           <option value="Wednesday">Wednesday</option>
+                           <option value="Thursday">Thursday</option>
+                           <option value="Friday">Friday</option>
+                           <option value="Saturday">Saturday</option>
+                        </select>
+                    </div>
+
                     <div class="formRow">
                         <label for="comments">Additional notes</label>
                         <textarea name="custComment" id="comments" rows="5"></textarea>
+                    </div>
+                    <div class="formRow">
+                        <label for="leadership">Would you like to be considered for club leadership positions?
+                            </label>
+                            <input name="leadership" id="leadership" type="checkbox" class="filled-in" checked>
+                    </div>
+                    <div class="formRow">
+                        <label for="subscribe">Subscribe to newsletter
+                            </label>
+                            <input name="subscribe" id="subscribe" type="checkbox"  class="filled-in" checked>
+                    </div>
+                    <div class="formRow">
+                        <input type="submit" name="submit" class="subButton" value="Send" />
+                        <input type="reset" class="resButton" value="Reset" />
+                    </div>
+
+                </fieldset>
+            </form>
+
+FORMBLCK;
+    if(isset($_POST['submit'])){
+        $name = isset($_POST['custName']) ? $_POST['custName'] : '';
+        $email = isset($_POST['custEmail']) ? $_POST['custEmail'] : '';
+        $prefTime = isset($_POST['available_times']) ? $_POST['available_times'] : '';
+        $prefDay = isset($_POST['available_days']) ? $_POST['available_days'] : '';
+        $notes = $_POST['custComment'];
+        $leadership = 1;
+        $subscribe = 1;
+        $id = null;
+        $timestamp = null;
+        $uploaderrors= array();
+            if(empty($name)){
+            $uploaderrors[]="<div class='errMsg'><p style='color:#6cc644;'>Error: Please be sure to include name</p></div><br/>";
+            }
+            if(empty($email)){
+            $uploaderrors[]="<div class='errMsg'><p style='color:#6cc644;'>Error: Please be sure to include email</p></div><br/>";
+            }
+            if(isset($_POST['subscribe'])){
+                $subscribe = 1;
+            } else {
+                $subscribe = 0;
+            }
+            if(isset($_POST['leadership'])){
+                $leadership = 1;
+            } else {
+                $leadership = 0;
+            }
+            if(empty($uploaderrors)){
+                // echo 'Your name is ' . $name .' ' . $email . ''. $prefTime .' ' . $prefDay. ''. $notes .' ' . $leadership . '' . $subscribe;
+
+            $myPDO= new Subscriptions();
+            $myPDO->sendSub(
+        $name, 
+        $email, 
+        $prefTime, 
+        $prefDay, 
+        $notes, 
+        $leadership, 
+        $subscribe);
+            } else {
+                foreach ($uploaderrors as $key => $value) {
+                    echo "<div class='errMsg'><p style='color:#6cc644;'>Attention: $value</p></div><br/>";
+                }
+                print $form;
+            }
+        } else {
+                print $form;
+        }
+?>
+<!-- 
+            <form id="contactForm" action="submit" method="post">
+                <fieldset id="custInfo">
+                    <legend>Contact Information</legend>
+                    <div class="formRow">
+                        <label for="name">Name</label>
+                        <input name="custName" id="name" type="text" required="required" placeholder="Required Field">
+                    </div>
+                    <div class="formRow">
+                        <label for="email">E-mail</label>
+                        <input name="custEmail" id="email" type="email" required="required" placeholder="Required Field">
+                    </div>
+                    <div class="formRow">
+                        <label>Times of Availability</label>
+                        <select name="available_times" id="available_times">
+                            <option value="morning">Mornings 8AM-12PM</option>
+                            <option value="afternoon">Afternoons 12pm-4PM</option>
+                            <option value="evening">Evening 4PM-8PM</option>
+                        </select>
+                    </div>
+                        <label>Days of Availability</label>
+                        <select name="available_days" id="available_days">
+                            <option value="Sunday">Sunday</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                           <option value="Wednesday">Wednesday</option>
+                           <option value="Thursday">Thursday</option>
+                           <option value="Friday">Friday</option>
+                           <option value="Saturday">Saturday</option>
+                        </select>
+                    </div>
+
+                    <div class="formRow">
+                        <label for="comments">Additional notes</label>
+                        <textarea name="custComment" id="comments" rows="5"></textarea>
+                    </div>
+                    <div class="formRow">
+                        <label for="subscribe">Would you like to be considered for club leadership positions?
+                            </label>
+                            <input name="subscribe" id="subscribe" type="checkbox" required="required" class="filled-in" checked="checked">
+                    </div>
+                    <div class="formRow">
+                        <label for="subscribe">Subscribe to newsletter
+                            </label>
+                            <input name="subscribe" id="subscribe" type="checkbox" required="required" class="filled-in" checked="checked">
                     </div>
                     <div class="formRow">
                         <button type="submit" class="subButton">Send</button>
@@ -122,7 +216,7 @@
                     </div>
 
                 </fieldset>
-            </form>
+            </form> -->
         </section>
         <aside>
 <img src="../images/alex-knight-199368-unsplash.jpg" alt="technology image">
