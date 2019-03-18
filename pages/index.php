@@ -1,6 +1,7 @@
 <?php
 	include_once '../PHPscripts/myPDO.php';
 	include_once '../PHPscripts/Events.php';
+	include_once '../PHPscripts/Alerts.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,12 +33,15 @@
 </head>
 
 <body>
+
+<div id="alert_bar"><?php $displayAlert=new Alerts(); $displayAlert->getRecentAlert() ?></div>
+;
     <div id="navBar">
         <nav>
-            <div id="navGraphics">
+            <a href="index.php" id="navGraphics" >
                 <h2>Computer Science Club</h2>
                 <h3>at Highline Community College</h3>
-            </div>
+            </a>
             <div id="navLinks">
                 <a href="javascript:void(0);" class="navIcon">
                     <i id="navIcon" class="fa fa-bars fa-2x"></i>
@@ -71,7 +75,7 @@
           <!-- Staggered Description Elements -->
           <div class="item-description">
             <span class="vertical-part">
-              <b>Airbnb</b>
+              <b>Git to know us</b>
             </span>
             <span class="vertical-part">
               <b>It is a first Computer Science Club for
@@ -97,7 +101,7 @@
           <!-- Staggered Description Elements -->
           <div class="item-description">
             <span class="vertical-part">
-              <b>Airbnb</b>
+              <b>All tech, all day</b>
             </span>
             <span class="vertical-part">
               <b>It is a first Computer Science Club for
@@ -128,7 +132,7 @@
           <!-- Staggered Description Elements -->
           <div class="item-description">
             <span class="vertical-part">
-              <b>Airbnb</b>
+              <b>Come see what we're learning</b>
             </span>
             <span class="vertical-part">
               <b>It is a first Computer Science Club for
