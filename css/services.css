@@ -46,9 +46,9 @@ section {
     text-align: center;
     display: flex;
     align-items: center;
-    left: 40%;
+    /* left: 40%;
     top: 5px;
-    position: absolute;
+    position: absolute; */
 }
 
 .title {

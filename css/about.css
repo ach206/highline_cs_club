@@ -26,7 +26,7 @@ main {
 }
 
 .row {
-  background: #016DC3;
+border: 1px silver solid;
 }
 
 
@@ -36,12 +36,14 @@ main {
 .leftSection {
   width: 40%;
   box-sizing: content-box;
-  background-color: #fff;
+  background-color: transparent;
   border: 1px solid #F1F07F;
   padding: 40px 10px;
   position: relative;
 }
-
+ .sectionText {
+   margin-top: 1.5em;
+ }
 .sectionTitle {
     background-color: #016DC3;
     text-transform: uppercase;
@@ -81,21 +83,26 @@ aside img {
 }
 
 /* --------FORMS------- */
-
+#addSubsForm {
+  max-width: 30%;
+}
 form label {
     color: #fff !important;
 }
 
-input#username {
+input#username, #user-pw {
     padding: 2em 0;
+    color: #be0e15;
 }
 
 button.btn {
     margin: 1em auto;
-    background-color: #cddc39;
+    background-color: beige;
     color: #000;
 }
-
+button.btn:hover {
+  background-color: #be0e15;
+}
 /* -------------media for phones ------------ */
 
 @media screen and (max-width: 960px){

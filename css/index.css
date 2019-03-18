@@ -305,7 +305,7 @@ div#navLinks a, footer {
   color: #000;
 }
 .announce p:last-of-type, .testimony p:last-of-type {
-  color: rgb(172, 40, 35);
+  color: #ac2823;
   font-size: 0.8em;
   font-weight: 700;
   text-transform: uppercase;
@@ -324,17 +324,10 @@ div#navLinks a, footer {
   font-weight: 600;
   text-align: center;
 }
-/*------------aside-----------------*/
-/* aside {
-        margin: 0 auto;
+/*------------subscribers-----------------*/
+.sub-container {
+  display: -webkit-box;
 }
-aside img {
-    width: 100%;
-    max-width: 544px;
-    box-sizing: border-box;
-    padding: .2em .5em;
-} */
-
 /*------------footer---------*/
 footer {
     display: flex;
