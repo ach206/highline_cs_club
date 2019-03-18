@@ -23,31 +23,25 @@ class Subscriptions extends myPDO{
 		if($stmt->rowCount()){
 			echo '<pre>Thanks, ' .$name. '. Your request has been received.</pre>';
 		}
-// echo <<<EOT
-// <p> Form Submitted Successfully! </p>
-// EOT;
+
 
 		}
-	
-	
-    //CLOSE getPastEvents
 
-	// public function insertImage($imagename,$image){
-	// 	$stmt = $this->connect()->prepare("INSERT INTO imageTable VALUES(null,?,?)");
-	// 	$stmt->execute(array($imagename,$image));
-		
-	// 	if($stmt->rowCount()){
-			
-		
-	// 		return 1;
-			
-	// 	}else{
-	// 		return 0;
-	// 	}
+public function getSubs(){
 	
+$stmt = $this->connect()->query("SELECT * FROM Subscribers");
+while($row = $stmt->fetch()){
 
+echo <<<EOT
+<div class='sub-container'>
+<p class='sub-name'>{$row['name']}</p>
+<p class='sub-email'>{$row['email']}</p>
+</div>
+EOT;
+
+}
 	
-	
+}//CLOSE getSubs
 	
 }
 
