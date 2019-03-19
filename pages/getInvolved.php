@@ -96,7 +96,7 @@
               <div class="rightSection">
 
                 <aside>
-<img src="../images\randall-bruder-136626-unsplash.jpg">
+                  <iframe src="https://calendar.google.com/calendar/embed?src=students.highline.edu_47edjkg9o0cm12c7t6ihs21d3o%40group.calendar.google.com&ctz=America%2FLos_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
                                 </aside>
                               </div>
             </main>

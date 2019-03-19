@@ -92,6 +92,10 @@ aside img {
   width: 100%;
 }
 
+.st-dtitle, .mv-event-container, .mv-daynames-table, .st-dtitle-nonmonth {
+  background: #22222a !important;
+  color: white !important;
+}
 
 
 /* -------------media for phones ------------ */
